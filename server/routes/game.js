@@ -1,9 +1,3 @@
-const GameSchema = new mongoose.Schema({
-  players: [String],
-  completed: Boolean,
-  winner: String
-}, { timestamps: true }); // <-- add this
-
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
