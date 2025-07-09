@@ -1,3 +1,17 @@
+// GET /api/wallet/history
+router.get("/history", async (req, res) => {
+  const name = req.headers["player-name"];
+  if (!name) return res.status(400).json({ status: "Missing name" });
+
+  try {
+    const Withdraw = require("../models/Withdraw");
+    const list = await Withdraw.find({ name }).sort({ date: -1 }).limit(20);
+    res.json({ history: list });
+  } catch (err) {
+    res.status(500).json({ status: "Error" });
+  }
+});
+
 // POST /api/wallet/withdraw
 router.post("/withdraw", async (req, res) => {
   const name = req.headers["player-name"];
