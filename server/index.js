@@ -1,3 +1,8 @@
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Headers", "player-name, Content-Type");
+  next();
+});
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
