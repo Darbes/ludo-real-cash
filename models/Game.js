@@ -1,3 +1,9 @@
+const GameSchema = new mongoose.Schema({
+  players: [String],
+  completed: Boolean,
+  winner: String
+}, { timestamps: true }); // <-- add this
+
 const mongoose = require("mongoose");
 
 const gameSchema = new mongoose.Schema({
