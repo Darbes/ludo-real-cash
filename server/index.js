@@ -1,3 +1,4 @@
+app.use("/api/history", require("./routes/history"));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "player-name, Content-Type");
   next();
